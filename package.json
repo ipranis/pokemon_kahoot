@@ -19,7 +19,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
     "eslint-config-next": "15.0.3",
     "postcss": "^8.4.49"
   }
