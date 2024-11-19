@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 const pokemonFontSolid = localFont({
 	src: "../../../public/Pokemon Solid.ttf",
@@ -10,7 +11,7 @@ const pokemonFontHollow = localFont({
 	src: "../../../public/Pokemon Hollow.ttf",
 });
 
-export default function GetFin() {
+function GetFin() {
 	const searchParams = useSearchParams();
 	let score = searchParams.get("score");
 	return (
@@ -32,6 +33,15 @@ export default function GetFin() {
 		</div>
 	);
 }
+
+export default function FinWithSus() {
+	return (
+		<Suspense>
+			<GetFin />
+		</Suspense>
+	);
+}
+
 export function HollowText({ clname, text }) {
 	return (
 		<span className={clname + " " + pokemonFontHollow.className}>
